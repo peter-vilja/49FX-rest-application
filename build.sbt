@@ -22,7 +22,8 @@ libraryDependencies ++= Seq(
   "org.slf4j" % "slf4j-api" % "1.6.4",
   "org.mockito" % "mockito-all" % "1.8.5" % "test",
   "org.eclipse.jetty" % "jetty-webapp" % "8.1.8.v20121106" % "container",
-  "javax.servlet" % "servlet-api" % "2.5" % "provided"
+  "javax.servlet" % "servlet-api" % "2.5" % "provided",
+  "org.mongodb" %% "casbah" % "2.6.2"
 )
 
 resolvers += "Sonatype OSS Snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"

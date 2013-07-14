@@ -5,8 +5,9 @@ import org.scalatra.json._
 import org.scalatra._
 import fi.peter.fx.domain.{MessageAndId, Message}
 import fi.peter.fx.domain.MessageRepository._
+import com.mongodb.util.JSON
 
-class FxResource extends ScalatraServlet with ScalatraBase with CorsSupport with JacksonJsonSupport {
+class FxResource() extends ScalatraServlet with ScalatraBase with CorsSupport with JacksonJsonSupport {
 
   protected implicit val jsonFormats: Formats = DefaultFormats
 
@@ -14,17 +15,16 @@ class FxResource extends ScalatraServlet with ScalatraBase with CorsSupport with
     response.setHeader("Access-Control-Allow-Headers", request.getHeader("Access-Control-Request-Headers"));
   }
 
-  before() {
-    contentType = formats("json")
-  }
+//  before() {
+//    contentType = formats("json")
+//  }
 
   get("/message") {
-    fetch()
+    JSON.serialize(fetch())
   }
 
   post("/message") {
-    val message = parsedBody.extract[Message]
-    add(message)
+    add(request.body)
   }
 
 }
