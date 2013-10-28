@@ -4,16 +4,16 @@ name := "49FX-rest-application"
 
 version := "0.1.0-SNAPSHOT"
 
-scalaVersion := "2.10.0"
+scalaVersion := "2.10.3"
 
 crossPaths := false
 
 seq(webSettings :_*)
 
 libraryDependencies ++= Seq(
-  "org.scalatra" %% "scalatra" % "2.2.0",
-  "org.scalatra" %% "scalatra-specs2" % "2.2.0" % "test",
-  "org.scalatra" %% "scalatra-json" % "2.2.0",
+  "org.scalatra" %% "scalatra" % "2.2.1",
+  "org.scalatra" %% "scalatra-specs2" % "2.2.1" % "test",
+  "org.scalatra" %% "scalatra-json" % "2.2.1",
   "org.json4s" %% "json4s-jackson" % "3.1.0",
   "commons-codec" % "commons-codec" % "1.6",
   "joda-time" % "joda-time" % "2.1",
